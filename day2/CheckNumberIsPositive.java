@@ -10,8 +10,10 @@ public class CheckNumberIsPositive {
 			System.out.println("Enter a number:");
 			Scanner s = new Scanner(System.in);
 			int input = s.nextInt();
-			if(input>=0)
+			if(input>0)
 				System.out.println("The number you have entered is positive.");
+			else if(input == 0)
+				System.out.println("0 is neither positive nor negative.");
 			else
 				System.out.println("The number you have entered is negative.");
 			s.close();
