@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="TestLegalEntity" verbose="2">
+    <classes>
+      <class name="week5.day2.TestNewLegalEntity1"/>
+      <class name="week5.day2.TestNewLegalEntity2"/>
+    </classes>
+  </test> <!-- TestLegalEntity -->
+</suite> <!-- Suite -->
