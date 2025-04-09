@@ -26,7 +26,7 @@ public class TestNewLegalEntity2 extends ProjectSpecificMethod {
 		//Click on the Dropdown icon in the legal Entities tab
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();",
-				driver.findElement(By.xpath("(//lightning-primitive-icon)[14]")));
+				driver.findElement(By.xpath("//span[contains(text(),'Legal Entities')]/following::lightning-icon")));
 		//Click on New Legal Entity
 		js.executeScript("arguments[0].click();",
 				driver.findElement(By.xpath("//span[text()='New Legal Entity']")));
