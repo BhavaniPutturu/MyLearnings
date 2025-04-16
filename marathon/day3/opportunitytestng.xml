@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="url" value="https://login.salesforce.com"></parameter>
+<parameter name="userName" value="vidyar@testleaf.com"></parameter>
+<parameter name="passWord" value="Sales@123"></parameter>
+  <test name="Test" verbose="2">
+    <classes>
+      <class name="marathon.day3.CreateAccount"/>
+      <class name="marathon.day3.EditAccount"/>      
+      <class name="marathon.day3.DeleteAccount"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
