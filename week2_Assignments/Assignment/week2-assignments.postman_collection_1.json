@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "bd278824-80e0-4271-8a57-c24576ed3329",
+		"name": "week2-assignments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44591797",
+		"_collection_link": "https://bhavani-2739001.postman.co/workspace/Bhavani's-Workspace~a2da9a22-584f-4de6-82e4-5f84cf8c8ba7/collection/44591797-bd278824-80e0-4271-8a57-c24576ed3329?action=share&source=collection_link&creator=44591797"
+	},
+	"item": [
+		{
+			"name": "assignment1",
+			"item": [
+				{
+					"name": "create_Incident",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"var resp = pm.response.json();\r",
+									"var sysid = resp.result.sys_id;\r",
+									"pm.collectionVariables.set(\"incidentSysId\", sysid);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{passWord}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{userName}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"short_description\": \"{{Short_Desc}}\",\r\n  \"description\": \"{{Desc}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUri}}/api/now/table/incident",
+							"host": [
+								"{{BaseUri}}"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var resp = pm.response.json();\r",
+					"var sysid = resp.result.sys_id;\r",
+					"pm.collectionVariables.set(\"incidentSysId\", sysid);\r",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "incidentSysId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "userName",
+			"value": "admin",
+			"type": "string"
+		},
+		{
+			"key": "passWord",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
